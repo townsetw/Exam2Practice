@@ -2,8 +2,8 @@
 PRACTICE Test 2, practice_problem 2.
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Tyler Townsend.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -30,7 +30,7 @@ import simple_testing as st
 
 def main():
     """ Calls the   TEST   functions in this module. """
-    run_test_practice_problem2a()
+    #run_test_practice_problem2a()
     run_test_practice_problem2b()
 
 
@@ -42,7 +42,7 @@ def main():
 def run_test_practice_problem2a():
     """ Tests the   practice_problem2a  function. """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # DONE: 2. Implement this TEST function.
     #   It TESTS the  practice_problem2a  function defined below.
     #   Include at least **   4 reasonable   ** tests.
     #
@@ -55,6 +55,42 @@ def run_test_practice_problem2a():
     print('--------------------------------------------------')
     print('Testing the   practice_problem2a   function:')
     print('--------------------------------------------------')
+
+    print("Test 1:")
+    print('--------------------------------------------------')
+    sequence = [2, 10, 5 , -20, 8]
+    delta = 6
+    answer = practice_problem2a(sequence, delta)
+    expected= [8, 16, 11, -14, 14]
+    print('Expected Answer:   ', expected)
+    print('My Answer:         ', answer)
+    print('--------------------------------------------------')
+    print("Test 2:")
+    print('--------------------------------------------------')
+    sequence = [1, 2, 3, 4, 5]
+    delta = 2
+    answer = practice_problem2a(sequence, delta)
+    expected = [3, 4, 5, 6, 7]
+    print('Expected Answer:   ', expected)
+    print('My Answer:         ', answer)
+    print('--------------------------------------------------')
+    print("Test 3:")
+    print('--------------------------------------------------')
+    sequence = [5, 10, 15, 20, 25]
+    delta = 5
+    answer = practice_problem2a(sequence, delta)
+    expected = [10, 15, 20, 25, 30]
+    print('Expected Answer:   ', expected)
+    print('My Answer:         ', answer)
+    print('--------------------------------------------------')
+    print("Test 4:")
+    print('--------------------------------------------------')
+    sequence = [3, 6, 9, 12, 15]
+    delta = 1
+    answer = practice_problem2a(sequence, delta)
+    expected = [4, 7, 10, 13, 16]
+    print('Expected Answer:   ', expected)
+    print('My Answer:         ', answer)
 
 
 def practice_problem2a(sequence, delta):
@@ -76,14 +112,17 @@ def practice_problem2a(sequence, delta):
       :type delta:    int
     """
     ####################################################################
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   5 minutes.
     ####################################################################
-
+    new_list = []
+    for k in range(len(sequence)):
+        new_list = new_list + [sequence[k] + delta]
+    return new_list
 
 def run_test_practice_problem2b():
     """ Tests the   practice_problem2b  function. """
@@ -170,13 +209,24 @@ def practice_problem2b(sequence):
       :type sequence [str]
     """
     ####################################################################
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   10 minutes.
     ####################################################################
+
+    empty_string = ''
+
+
+    for k in range(len(sequence)):
+        word = sequence[k]
+        if len(word) > 0:
+            first_letter = str(word[0])
+            empty_string = empty_string + first_letter
+
+    return empty_string
 
 
 # ----------------------------------------------------------------------
